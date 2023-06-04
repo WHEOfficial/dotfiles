@@ -101,19 +101,10 @@ autoload edit-command-line; zle -N edit-command-line
 bindkey '^n' edit-command-line
 
 # Aliases
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-alias vim=nvim
-alias hd=hexdump
-alias daily='sudo ~/Documents/daily/daily.sh'
-alias startx='ssh-agent startx'
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+source $XDG_CONFIG_HOME/zsh/aliases.sh
 
 # Env vars
-export VISUAL=nvim
-export EDITOR="$VISUAL"
-export PATH="$HOME/opt/cross/bin:$HOME/.foreman/bin:$HOME/.local/share/JetBrains/Toolbox/scripts:$HOME/.local/bin:$PATH"
-. "$HOME/.cargo/env"
+source $XDG_CONFIG_HOME/zsh/env.sh
 
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
